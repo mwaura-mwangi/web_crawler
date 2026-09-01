@@ -109,7 +109,7 @@ web_crawler/
 ├── app/
 │   └── element_crawler.py   # Main crawler class, inspection logic, and export routines
 ├── pyproject.toml           # Project configuration & dependencies
-├── README.md                # Project license
+├── LICENSE                  # Project license
 ├── README.md                # Project documentation
 ├── crawl_results.csv        # (Generated) Exported CSV dataset
 └── crawl_results.db         # (Generated) Exported SQLite database
