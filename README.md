@@ -109,6 +109,12 @@ web_crawler/
 ├── app/
 │   └── element_crawler.py   # Main crawler class, inspection logic, and export routines
 ├── pyproject.toml           # Project configuration & dependencies
+├── README.md                # Project license
 ├── README.md                # Project documentation
 ├── crawl_results.csv        # (Generated) Exported CSV dataset
 └── crawl_results.db         # (Generated) Exported SQLite database
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

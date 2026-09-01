@@ -1,8 +1,9 @@
 [project]
 name = "web-crawler"
 version = "0.1.0"
-description = "Add your description here"
+description = "A configurable Python web crawler and signature inspector."
 readme = "README.md"
+licence = {text = "MIT"}
 requires-python = ">=3.14"
 dependencies = [
     "beautifulsoup4>=4.15.0",
