@@ -115,6 +115,70 @@ web_crawler/
 └── crawl_results.db         # (Generated) Exported SQLite database
 ```
 
+# Building a Standalone Executable with PyInstaller
+
+You can bundle your desktop GUI application into a single standalone executable file using **PyInstaller**. This allows anyone to run your application without needing Python installed on their system.
+
+---
+
+## 1. Install PyInstaller
+
+Ensure your virtual environment is activated, then install `pyinstaller` using `uv`:
+
+```bash
+uv pip install pyinstaller
+```
+
+---
+
+## 2. Generate the Standalone Executable
+
+Run PyInstaller targeting your `gui.py` entry point:
+
+```bash
+pyinstaller --noconfirm --onedir --windowed --name "WebCrawlerApp" app/gui.py
+```
+
+### Options Explained:
+- `--windowed` (`-w`): Hides the black terminal/console window so only the Tkinter window appears.
+- `--onedir` (`-D`): Packages the app into a clean directory structure (faster startup time). If you prefer a **single file**, replace `--onedir` with `--onefile` (`-F`).
+- `--name "WebCrawlerApp"`: Sets the executable binary name.
+
+---
+
+## 3. Include Dependencies & Files
+
+If PyInstaller needs explicit module hints or if you want to include default configuration files, you can build using PyInstaller's spec file.
+
+Generate and run with a spec file:
+
+```bash
+pyi-makespec --windowed --name "WebCrawlerApp" app/gui.py
+pyinstaller WebCrawlerApp.spec
+```
+
+---
+
+## 4. Output Location
+
+Once compilation finishes, your executable will be located in the `dist/` directory:
+
+```text
+web_crawler/
+├── dist/
+│   └── WebCrawlerApp/       <-- Executable package folder
+│       └── WebCrawlerApp    <-- Binary executable file
+├── build/                   <-- Temporary build artifacts (can be deleted)
+└── WebCrawlerApp.spec       <-- PyInstaller build configuration
+```
+
+To test running your compiled GUI executable from terminal:
+
+```bash
+./dist/WebCrawlerApp/WebCrawlerApp
+```
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
